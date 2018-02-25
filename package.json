@@ -1,0 +1,28 @@
+{
+  "name": "twitter_search_test",
+  "version": "1.0.0",
+  "description": "Testing results of twitter search",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trentin G",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "request": "^2.83.0",
+    "socket.io": "^2.0.4",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craishot/GeoTwitter_HackCU.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Craishot/GeoTwitter_HackCU/issues"
+  },
+  "homepage": "https://github.com/Craishot/GeoTwitter_HackCU#readme"
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoTwitter</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body> 
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center; font-weight: bold">Twitter Search</h1>
+            
+            <div style="width 50%; margin: 30px auto;">
+                <form action="/search" method="GET">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="SEARCH A TWEET NEAR YOU" name="search">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Search</button>
+                    </div>
+                </form>
+                
+                <div class="row text-center">
+                    <h3>Name: <%= Tweet.Name %></h3>
+                    <h3>Retweets: <%= Tweet.NumRetweets %></h3>
+                    <h3>Tweet: <%= Tweet.TweetContent %></h3>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

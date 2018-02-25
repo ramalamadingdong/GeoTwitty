@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoTwitter</title>
+
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <!-- Source Sans Pro (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<style>
+	    body {
+	        background: #0084b4;
+	        font-family: "Source Sans Pro", sans-serif;
+	        font-weight: 700;
+	    }
+	    
+	    .jumbotron {
+	        background-color: #ffffff;
+	        background: linear-gradient( rgba(225, 225, 225, 0.7), rgba(225, 225, 225, 0.7) ), url(https://source.unsplash.com/PjTBdhXI_7s);
+	    }
+	</style>
+</head>
+<body> 
+  <div class="tweet container">
+       <header class="jumbotron">
+        <div class="container">
+            <h1>Results</h1>
+            <p>Here are some recent tweets from your area!</p>
+            <p>
+                <a class="btn btn-info btn-lg" href="/"><i class="fab fa-twitter"></i> Search Again</a>
+            </p>
+        </div>
+        </header>
+      
+      <% for(var i = 0; i < tweets.length; i++) { %>
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <h3 class="panel-title">Tweet: <%= i + 1 %></h3>
+          </div>
+          <div class="panel-body">
+              <ul class="list-group">
+                  <li class="list-group-item"><%= tweets[i].Name %></li>
+                  <li class="list-group-item"><%= tweets[i].NumRetweets %></li>
+                  <li class="list-group-item"><%= tweets[i].TweetContent %></li>
+              </ul>
+              </div>
+          </div>
+      <% } %>
+  </div>
+</body>
+</html>

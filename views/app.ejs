@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GeoTweety</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+        crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <!-- Source Sans Pro (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+// <script>
+// function sendData() {
+    
+//     function getLocation() {
+//         if (navigator.geolocation) {
+//             return navigator.geolocation.getCurrentPosition();
+//     }
+
+    
+//     // Store coordinates in variable
+//     var position = getLocation();
+    
+//     // Check that position was successfully loaded
+//     if(!position) {
+//         console.log("error loading location");
+//     }
+
+//     // Set-up form
+//     form.action = "/search";
+//     from.name = "geoData"
+//     form.target = iframe.name;
+
+//     node = position;
+    
+
+//   // To be sent, the form needs to be attached to the main document.
+//   form.style.display = "none";
+//   document.body.appendChild(form);
+
+//   form.submit();
+
+//   // Once the form is sent, remove it.
+//   document.body.removeChild(form);
+// }
+    
+// </script>
+<script src="/socket.io/socket.io.js"></script>
+<script>  
+var position = getLocation();
+var socket = io.connect('http://localhost:3000');
+ socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+
+    <style>
+        body {
+            font-family: "Source Sans Pro", sans-serif
+            
+        }    
+
+        html {
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+
+        h1 {
+            color: rgb(224, 223, 223);
+            font-size: 5em;
+            font-weight: 700;
+        }
+
+        h4 {
+            color: rgb(224, 223, 223);
+        }
+
+        hr {
+            width: 50%;
+            border-top: 1px solid rgb(224, 223, 223);
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+        .home {
+            background:  linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://source.unsplash.com/HAIPJ8PyeL8);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .search-btn {
+            border-color: #00aced;
+            background-color: #ffffff
+            color: #ffffff;
+        }
+
+        .search-btn:hover {
+            background-color: #0084b4;
+        }
+
+        .content {
+            padding-top: 25%;
+            text-align: center;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                         0px 8px 13px rgba(0,0,0,0.1),
+                         0px 18px 23px rgba(0,0,0,0.1);
+        }
+        
+        .search-form {
+            margin: 25px auto;
+            width: 30%;
+        }
+        
+        ::-webkit-input-placeholder {
+           text-align: center;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+           text-align: center;  
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+           text-align: center;  
+        }
+
+        :-ms-input-placeholder {  
+           text-align: center; 
+        }
+    </style>
+</head>
+<body class="home">
+
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="content">
+                <h1>GeoTweety</h1>
+                <h4>Search something and find out about some that tweets that have happend here!</h4>
+                <hr>
+                <form action="/search" method="GET">
+                    <div class="search-form form-group">
+                        <input class="form-control" type="text" placeholder="SEARCH A TWEET NEAR YOU" name="search">
+                    </div>
+                    <div class="form-group">
+                        <button onclick="sendData()" class="search-btn btn btn-info btn-lg"type="submit"><i class="fab fa-twitter"></i> Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- jQuery JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

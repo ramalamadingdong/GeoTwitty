@@ -1,1 +1,3 @@
 # GeoTwitty
+GeoTwitty
+	GeoTwitty is a service that allows you to totally stalk the people experiencing life around you. GeoTwitty is an application that uses the twitter api to search for and display tweets based on latitude and longitude coordinates of the user and a search query. The user enters a search into the web application and receives information on tweets from the last 7 days, related to their search, within a 10 mile radius. My partner and I would love to include an array of new features including the ability to change the search radius, as well as display the geographical location of the tweets that the search returns.
